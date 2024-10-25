@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function:array,size,int</title>
+</head>
+
+<body>
+    <script>
+        function countElements(n, val1, arr) {
+
+            let counts = arr.reduce(
+                (acc, num) => {
+                    if (num < val1) {
+                        acc[0]++;
+                    } else if (num === val1) {
+                        acc[1]++;
+                    } else {
+                        acc[2]++;
+                    }
+                    return acc;
+                },
+                [0, 0, 0]
+            );
+
+            return counts;
+        }
+        const n = 5;
+        const val1 = 6;
+        const arr = [2, 4, 6, 8, 10];
+        const result = countElements(n, val1, arr);
+        console.log(result);
+
+    </script>
+</body>
+
+</html>
